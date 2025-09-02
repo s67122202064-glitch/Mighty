@@ -1,19 +1,51 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>โยคะ & สบายใจ - FitLife</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>โยคะ & สบายใจ - Mighty</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    body { font-family: Arial, sans-serif; }
+    body {
+      font-family: 'Arial', sans-serif;
+      background: url('pokemon/bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
     .navbar {
       background: linear-gradient(90deg, #000000 , #7f7fff);
     }
-    .navbar-brand, .nav-link { color: #ffffff !important; font-weight: 500; }
-    .navbar-brand:hover, .nav-link:hover { text-decoration: underline; }
-    .section { padding: 60px 20px; }
-    .footer { background: #333; color: #fff; padding: 20px; text-align: center; }
+    .navbar-brand, .nav-link, .dropdown-item {
+      color: white !important;
+      font-weight: bold;
+    }
+    .nav-link:hover, .dropdown-item:hover {
+      color: #FFD700 !important;
+    }
+    .hero {
+      background: rgba(216, 216, 216, 0.9);
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+      position: relative;
+    }
+    .hero h1 { font-size: 3rem; font-weight: bold; }
+    .hero p { font-size: 1.2rem; }
+    .btn-custom {
+      background: #FFD700;
+      color: black;
+      font-weight: bold;
+      border-radius: 25px;
+      padding: 10px 25px;
+      transition: 0.3s;
+    }
+    .btn-custom:hover {
+      background: #FFC107;
+      transform: scale(1.05);
+    }
+    .btn-top-right { position: absolute; top: 20px; right: 20px; }
+    .program-card { transition: 0.3s; border-radius: 15px; overflow: hidden; }
+    .program-card:hover { transform: translateY(-10px); box-shadow: 0px 8px 20px rgba(0,0,0,0.2); }
+    .footer { background: #7f7fff; color: white; text-align: center; padding: 20px 0; margin-top: 50px; }
     .list-group-item { font-size: 1.1rem; }
     .progress { height: 20px; margin-top: 5px; }
     .progress-bar { background-color: #51cf66; }
@@ -21,26 +53,26 @@
   </style>
 </head>
 <body>
+
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.html">
-        <img src="pokemon/k.png" alt="Logo" width="60" height="50" class="d-inline-block align-text-top">
-        
+        <img src="pokemon/k.png" alt="Logo" width="60" height="50">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">🏠 Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">💖 สนับสนุน</a></li>
-          <li class="nav-item"><a class="nav-link" href="stretching.html">🧎‍♂️ การยืดกล้ามเนื้อ</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html">🏠 หน้าแรก</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">💖 เกี่ยวกับ</a></li>
+          <li class="nav-item"><a class="nav-link active" href="yoga.html">🧘‍♀️ โยคะ & สบายใจ</a></li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">👤 บัญชีผู้ใช้</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">🔑 เข้าสู่ระบบ</a></li>
-              <li><a class="dropdown-item" href="#">📝 สมัครสมาชิก</a></li>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="login.html">🔑 เข้าสู่ระบบ</a></li>
+              <li><a class="dropdown-item" href="register.html">📝 สมัครสมาชิก</a></li>
             </ul>
           </li>
         </ul>
@@ -49,39 +81,64 @@
   </nav>
 
   <!-- Hero Section -->
-  <div class="section text-center bg-light">
-    <h1>🧘‍♀️ โยคะ & สบายใจ</h1>
-    <p>โปรแกรมช่วยยืดหยุ่น รักษาสมดุลร่างกายและจิตใจ</p>
-    <img src="images/yoga.jpg" alt="โยคะ" class="hero-img">
-  </div>
+  <section class="hero">
+    <div class="container">
+      <a href="#programs" class="btn btn-custom btn-top-right">ดูโปรแกรม</a>
+      <h1>🧘‍♀️ โยคะ & สบายใจ</h1>
+      <p>โปรแกรมช่วยยืดหยุ่น รักษาสมดุลร่างกายและจิตใจ</p>
+      <img src="pokemon/t.jpg" alt="โยคะ" class="hero-img">
+    </div>
+  </section>
 
-  <!-- Program List -->
-  <div class="section container">
-    <h3>ตารางฝึก 5 วัน</h3>
-    <ul class="list-group">
-      <li class="list-group-item">จันทร์: 🌅 Sun Salutation 5 รอบ
-        <div class="progress"><div class="progress-bar" style="width:50%">50%</div></div>
-      </li>
-      <li class="list-group-item">อังคาร: 🧘‍♂️ Warrior Poses 15 นาที
-        <div class="progress"><div class="progress-bar" style="width:60%">60%</div></div>
-      </li>
-      <li class="list-group-item">พุธ: 🌳 Tree Pose + Balance 10 นาที
-        <div class="progress"><div class="progress-bar" style="width:55%">55%</div></div>
-      </li>
-      <li class="list-group-item">พฤหัส: 🐱 Cat-Cow Stretch 10 นาที
-        <div class="progress"><div class="progress-bar" style="width:50%">50%</div></div>
-      </li>
-      <li class="list-group-item">ศุกร์: 🧘 Relaxation & Meditation 15 นาที
-        <div class="progress"><div class="progress-bar" style="width:40%">40%</div></div>
-      </li>
-    </ul>
-  </div>
+  <!-- Yoga Program List -->
+  <section id="programs" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">ตารางฝึกโยคะ 5 วัน</h2>
+      <ul class="list-group">
+        <li class="list-group-item">จันทร์: 🌅 Sun Salutation 5 รอบ
+          <div class="progress"><div class="progress-bar" style="width:50%">50%</div></div>
+        </li>
+        <li class="list-group-item">อังคาร: 🧘‍♂️ Warrior Poses 15 นาที
+          <div class="progress"><div class="progress-bar" style="width:60%">60%</div></div>
+        </li>
+        <li class="list-group-item">พุธ: 🌳 Tree Pose + Balance 10 นาที
+          <div class="progress"><div class="progress-bar" style="width:55%">55%</div></div>
+        </li>
+        <li class="list-group-item">พฤหัส: 🐱 Cat-Cow Stretch 10 นาที
+          <div class="progress"><div class="progress-bar" style="width:50%">50%</div></div>
+        </li>
+        <li class="list-group-item">ศุกร์: 🧘 Relaxation & Meditation 15 นาที
+          <div class="progress"><div class="progress-bar" style="width:40%">40%</div></div>
+        </li>
+      </ul>
+    </div>
+  </section>
 
   <!-- Footer -->
-  <div class="footer">
-    <p>© 2025 FitLife</p>
-  </div>
+  <footer class="footer">
+    <p>© 2025 Mighty | สร้างสุขภาพที่แข็งแรงไปด้วยกัน</p>
+  </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const accountDropdown = document.querySelector(".nav-item.dropdown");
+      const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+
+      if (loggedInUser) {
+        const accountLink = accountDropdown.querySelector('a.nav-link');
+        accountLink.textContent = `👤 ${loggedInUser.fullname}`;
+        const dropdownMenu = accountDropdown.querySelector(".dropdown-menu");
+        dropdownMenu.innerHTML = `
+          <li><a class="dropdown-item" href="#" id="logoutBtn">🚪 ออกจากระบบ</a></li>
+        `;
+        document.getElementById("logoutBtn").addEventListener("click", function() {
+          localStorage.removeItem("loggedInUser");
+          alert("✅ ออกจากระบบเรียบร้อย");
+          window.location.reload();
+        });
+      }
+    });
+  </script>
 </body>
 </html>

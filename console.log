@@ -1,0 +1,10 @@
+const user = JSON.parse(localStorage.getItem("user"));
+console.log("user in localStorage:", user);
+
+if(user && emailInput === user.email && passwordInput === user.password) {
+    alert(`✅ เข้าสู่ระบบสำเร็จ! ยินดีต้อนรับ ${user.fullname}`);
+    window.location.href = "index.html";
+} else {
+    console.log("Login failed: email or password mismatch");
+    errorMsg.style.display = "block";
+}

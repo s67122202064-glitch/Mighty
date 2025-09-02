@@ -7,49 +7,26 @@
   <meta name="description" content="การยืดกล้ามเนื้อ ช่วยลดอาการบาดเจ็บ เพิ่มความยืดหยุ่น และทำให้ร่างกายพร้อมสำหรับการออกกำลังกาย">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Arial', sans-serif;
+    body { font-family: 'Arial', sans-serif; }
+    .navbar { background: linear-gradient(90deg, #000000 , #7f7fff); }
+    .navbar-brand, .nav-link, .dropdown-item { color: white !important; font-weight: bold; }
+    .nav-link:hover, .dropdown-item:hover { color: #FFD700 !important; }
+    .hero { 
+      background: url('https://source.unsplash.com/1600x600/?stretching,fitness') no-repeat center center; 
+      background-size: cover; 
+      color: white; 
+      text-align: center; 
+      padding: 100px 20px; 
+      position: relative;
     }
-    .navbar {
-      background: linear-gradient(90deg, #000000 , #7f7fff);
-    }
-    .navbar-brand, .nav-link {
-      color: white !important;
-      font-weight: bold;
-    }
-    .nav-link:hover {
-      color: #FFD700 !important;
-    }
-    .hero {
-      background: url('https://source.unsplash.com/1600x600/?stretching,fitness') no-repeat center center;
-      background-size: cover;
-      color: white;
-      text-align: center;
-      padding: 100px 20px;
-    }
-    .hero h1 {
-      font-size: 3rem;
-      font-weight: bold;
-    }
-    .hero p {
-      font-size: 1.2rem;
-    }
-    .stretch-card {
-      border-radius: 15px;
-      overflow: hidden;
-      transition: 0.3s;
-    }
-    .stretch-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
-    }
-    .footer {
-      background: #7f7fff;
-      color: white;
-      text-align: center;
-      padding: 20px 0;
-      margin-top: 50px;
-    }
+    .hero h1 { font-size: 3rem; font-weight: bold; }
+    .hero p { font-size: 1.2rem; }
+    .btn-top-right { position: absolute; top: 20px; right: 20px; }
+    .stretch-card { border-radius: 15px; overflow: hidden; transition: 0.3s; }
+    .stretch-card:hover { transform: translateY(-10px); box-shadow: 0px 8px 20px rgba(0,0,0,0.2); }
+    .btn-custom { background: #FFD700; color: black; font-weight: bold; border-radius: 25px; padding: 10px 20px; transition: 0.3s; }
+    .btn-custom:hover { background: #FFC107; transform: scale(1.05); }
+    .footer { background: #7f7fff; color: white; text-align: center; padding: 20px 0; margin-top: 50px; }
   </style>
 </head>
 <body>
@@ -57,14 +34,24 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">Mighty Fitness</a>
+      <a class="navbar-brand" href="index.html">
+        <img src="pokemon/k.png" alt="Logo" width="60" height="50">
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">🏠 Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html">🏠 หน้าแรก</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">💖 เกี่ยวกับ</a></li>
           <li class="nav-item"><a class="nav-link" href="stretching.html">🧎‍♂️ การยืดกล้ามเนื้อ</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">👤 บัญชีผู้ใช้</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">🔑 เข้าสู่ระบบ</a></li>
+              <li><a class="dropdown-item" href="#">📝 สมัครสมาชิก</a></li>
+            </ul>
+          </li>
         </ul>
       </div>
     </div>
@@ -72,6 +59,7 @@
 
   <!-- Hero Section -->
   <section class="hero">
+    <a href="#stretchingGuide" class="btn btn-custom btn-top-right">ดูท่ายืด</a>
     <div class="container">
       <h1>การยืดกล้ามเนื้อ</h1>
       <p>ลดการบาดเจ็บ เพิ่มความยืดหยุ่น และช่วยให้ร่างกายพร้อมสำหรับการออกกำลังกาย</p>
@@ -79,43 +67,102 @@
   </section>
 
   <!-- Stretching Guide -->
-  <section class="py-5">
+  <section id="stretchingGuide" class="py-5">
     <div class="container">
       <h2 class="text-center mb-4">ท่ายืดกล้ามเนื้อที่ควรรู้</h2>
       <div class="row g-4">
+
         <!-- ยืดต้นขาด้านหน้า -->
         <div class="col-md-4">
           <div class="card stretch-card">
-            <img src="https://source.unsplash.com/600x400/?stretch,leg" class="card-img-top" alt="ยืดต้นขาด้านหน้า">
-            <div class="card-body">
+            <img src="pokemon/f.jpg" class="card-img-top" alt="ยืดต้นขาด้านหน้า">
+            <div class="card-body text-center">
               <h5 class="card-title">1. ยืดต้นขาด้านหน้า</h5>
               <p class="card-text">ช่วยผ่อนคลายกล้ามเนื้อขา เหมาะก่อนและหลังวิ่งหรือเล่นเวท</p>
+              <button type="button" class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#legStretchModal">ดูรูป</button>
             </div>
           </div>
         </div>
+
         <!-- ยืดหลัง -->
         <div class="col-md-4">
           <div class="card stretch-card">
-            <img src="https://source.unsplash.com/600x400/?stretch,back" class="card-img-top" alt="ยืดหลัง">
-            <div class="card-body">
+            <img src="pokemon/r.jpg" class="card-img-top" alt="ยืดหลัง">
+            <div class="card-body text-center">
               <h5 class="card-title">2. ยืดหลัง</h5>
               <p class="card-text">ลดอาการปวดหลัง เพิ่มความผ่อนคลาย เหมาะสำหรับคนที่นั่งทำงานนานๆ</p>
+              <button type="button" class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#backStretchModal">ดูรูป</button>
             </div>
           </div>
         </div>
+
         <!-- ยืดไหล่ -->
         <div class="col-md-4">
           <div class="card stretch-card">
-            <img src="https://source.unsplash.com/600x400/?stretch,shoulder" class="card-img-top" alt="ยืดไหล่">
-            <div class="card-body">
+            <img src="pokemon/e.jpg" class="card-img-top" alt="ยืดไหล่">
+            <div class="card-body text-center">
               <h5 class="card-title">3. ยืดไหล่</h5>
               <p class="card-text">ช่วยให้หัวไหล่และแขนคลายความเกร็ง ป้องกันออฟฟิศซินโดรม</p>
+              <button type="button" class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#shoulderStretchModal">ดูรูป</button>
             </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Modals -->
+  <!-- Modal ยืดต้นขา -->
+  <div class="modal fade" id="legStretchModal" tabindex="-1" aria-labelledby="legStretchLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="legStretchLabel">ยืดต้นขาด้านหน้า</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="ratio ratio-16x9">
+            <iframe src="pokemon/l.jpeg" title="ยืดต้นขาด้านหน้า" allowfullscreen></iframe>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+
+  <!-- Modal ยืดหลัง -->
+  <div class="modal fade" id="backStretchModal" tabindex="-1" aria-labelledby="backStretchLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="backStretchLabel">ยืดหลัง</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="ratio ratio-16x9">
+            <iframe src="pokemon/m.jpg" title="ยืดหลัง" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal ยืดไหล่ -->
+  <div class="modal fade" id="shoulderStretchModal" tabindex="-1" aria-labelledby="shoulderStretchLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="shoulderStretchLabel">ยืดไหล่</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="ratio ratio-16x9">
+            <iframe src="pokemon/h.jpg" title="ยืดไหล่" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer class="footer">
@@ -123,5 +170,28 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- User Login Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const accountDropdown = document.querySelector(".nav-item.dropdown");
+      const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+
+      if (loggedInUser) {
+        const accountLink = accountDropdown.querySelector('a.nav-link');
+        accountLink.textContent = `👤 ${loggedInUser.fullname}`;
+        const dropdownMenu = accountDropdown.querySelector(".dropdown-menu");
+        dropdownMenu.innerHTML = `
+          <li><a class="dropdown-item" href="#" id="logoutBtn">🚪 ออกจากระบบ</a></li>
+        `;
+        document.getElementById("logoutBtn").addEventListener("click", function() {
+          localStorage.removeItem("loggedInUser");
+          alert("✅ ออกจากระบบเรียบร้อย");
+          window.location.reload();
+        });
+      }
+    });
+  </script>
+
 </body>
 </html>
