@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mighty - Home</title>
-  <meta name="description" content="Mighty Fitness เว็บไซต์สำหรับคนรักสุขภาพ โปรแกรมออกกำลังกาย ลดน้ำหนัก เพิ่มกล้ามเนื้อ โยคะ และการยืดกล้ามเนื้อ">
+  <meta name="description"
+    content="Mighty Fitness เว็บไซต์สำหรับคนรักสุขภาพ โปรแกรมออกกำลังกาย ลดน้ำหนัก เพิ่มกล้ามเนื้อ โยคะ และการยืดกล้ามเนื้อ">
   <link rel="icon" type="image/png" href="pokemon/k.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
@@ -13,25 +15,40 @@
       background: url('pokemon/bg.jpg') no-repeat center center fixed;
       background-size: cover;
     }
+
     .navbar {
-      background: linear-gradient(90deg, #000000 , #7f7fff);
+      background: linear-gradient(90deg, #000000, #7f7fff);
     }
-    .navbar-brand, .nav-link, .dropdown-item {
+
+    .navbar-brand,
+    .nav-link,
+    .dropdown-item {
       color: white !important;
       font-weight: bold;
     }
-    .nav-link:hover, .dropdown-item:hover {
+
+    .nav-link:hover,
+    .dropdown-item:hover {
       color: #7f7fff !important;
     }
+
     .hero {
-      background: rgba(127,127,255,0.9);
+      background: rgba(127, 127, 255, 0.9);
       color: white;
       text-align: center;
       padding: 100px 20px;
       position: relative;
     }
-    .hero h1 { font-size: 3rem; font-weight: bold; }
-    .hero p { font-size: 1.2rem; }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+    }
+
     .btn-custom {
       background: #7f7fff;
       color: black;
@@ -40,16 +57,65 @@
       padding: 10px 25px;
       transition: 0.3s;
     }
+
     .btn-custom:hover {
       background: #7f7fff;
       transform: scale(1.05);
     }
-    .btn-top-right { position: absolute; top: 20px; right: 20px; }
-    .program-card { transition: 0.3s; border-radius: 15px; overflow: hidden; }
-    .program-card:hover { transform: translateY(-10px); box-shadow: 0px 8px 20px rgba(0,0,0,0.2); }
-    .footer { background: #7f7fff; color: white; text-align: center; padding: 20px 0; margin-top: 50px; }
+
+    .btn-top-right {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
+    .program-card {
+      transition: 0.3s;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+
+    .program-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .footer {
+      background: #7f7fff;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 50px;
+    }
+
+    .program-card img {
+  width: 100%;
+  height: 220px;        /* ความสูงรูปเท่ากันทุกใบ */
+  object-fit: cover;    /* ครอปภาพให้เต็มกรอบ */
+  display: block;       /* ป้องกันรูปดัน card */
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.program-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;         /* การ์ดสูงเท่ากัน */
+}
+
+.program-card .card-body {
+  flex: 1;              /* ขยาย body ให้เต็ม */
+  display: flex;
+  flex-direction: column;
+}
+
+.program-card .mt-auto {
+  margin-top: auto;     /* ดันปุ่มลงล่างสุด */
+}
+
   </style>
 </head>
+
 <body>
 
   <!-- Navbar -->
@@ -124,43 +190,60 @@
   <section id="programs" class="py-5">
     <div class="container">
       <h2 class="text-center mb-4">โปรแกรมของเรา</h2>
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="card program-card">
+      <div class="row g-4 align-items-stretch">
+
+        <div class="col-md-4 d-flex">
+          <div class="card program-card flex-fill">
             <img src="pokemon/g" class="card-img-top" alt="ลดน้ำหนัก">
-            <div class="card-body">
+            <div class="card-body d-flex flex-column">
               <h5 class="card-title">🔥 โปรแกรมลดน้ำหนัก</h5>
               <p>สูตรการออกกำลังกายและโภชนาการที่ช่วยให้คุณลดไขมันอย่างยั่งยืน</p>
-              <a href="weight-loss.html" class="btn btn-custom">ดูเพิ่มเติม</a>
+              <div class="mt-auto">
+                <a href="weight-loss.html" class="btn btn-custom">ดูเพิ่มเติม</a>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card program-card">
+
+        <div class="col-md-4 d-flex">
+          <div class="card program-card flex-fill">
             <img src="pokemon/y" class="card-img-top" alt="เพิ่มกล้ามเนื้อ">
-            <div class="card-body">
+            <div class="card-body d-flex flex-column">
               <h5 class="card-title">💪 โปรแกรมเพิ่มกล้ามเนื้อ</h5>
               <p>แผนการฝึกเพื่อสร้างกล้ามเนื้ออย่างมีประสิทธิภาพ</p>
-              <a href="muscle-gain.html" class="btn btn-custom">ดูเพิ่มเติม</a>
+              <div class="mt-auto">
+                <a href="muscle-gain.html" class="btn btn-custom">ดูเพิ่มเติม</a>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card program-card">
+
+        <div class="col-md-4 d-flex">
+          <div class="card program-card flex-fill">
             <img src="pokemon/u" class="card-img-top" alt="โยคะ">
-            <div class="card-body">
+            <div class="card-body d-flex flex-column">
               <h5 class="card-title">🧘 โปรแกรมโยคะ</h5>
               <p>เสริมสร้างสมาธิ ความยืดหยุ่น และสุขภาพจิตใจ</p>
-              <a href="yoga.html" class="btn btn-custom">ดูเพิ่มเติม</a>
+              <div class="mt-auto">
+                <a href="yoga.html" class="btn btn-custom">ดูเพิ่มเติม</a>
+              </div>
             </div>
           </div>
         </div>
+
       </div>
+
       <div class="text-center mt-5">
         <a href="stretching.html" class="btn btn-custom">🧎‍♂️ คำแนะนำการยืดกล้ามเนื้อ</a>
       </div>
     </div>
   </section>
+
+
+
+
+
+
 
   <!-- Nutrition -->
   <section id="nutrition" class="py-5 bg-light">
@@ -210,28 +293,29 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-document.addEventListener("DOMContentLoaded", function() {
-  const accountDropdown = document.querySelector(".nav-item.dropdown");
-  const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+    document.addEventListener("DOMContentLoaded", function () {
+      const accountDropdown = document.querySelector(".nav-item.dropdown");
+      const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
 
-  if (loggedInUser) {
-    const accountLink = accountDropdown.querySelector('a.nav-link');
-    accountLink.textContent = `👤 ${loggedInUser.fullname}`;
-    const dropdownMenu = accountDropdown.querySelector(".dropdown-menu");
-    dropdownMenu.innerHTML = `
+      if (loggedInUser) {
+        const accountLink = accountDropdown.querySelector('a.nav-link');
+        accountLink.textContent = `👤 ${loggedInUser.fullname}`;
+        const dropdownMenu = accountDropdown.querySelector(".dropdown-menu");
+        dropdownMenu.innerHTML = `
       <li><a class="dropdown-item" href="#" id="logoutBtn">🚪 ออกจากระบบ</a></li>
     `;
-    document.getElementById("logoutBtn").addEventListener("click", function() {
-      localStorage.removeItem("loggedInUser");
-      alert("✅ ออกจากระบบเรียบร้อย");
-      window.location.reload();
+        document.getElementById("logoutBtn").addEventListener("click", function () {
+          localStorage.removeItem("loggedInUser");
+          alert("✅ ออกจากระบบเรียบร้อย");
+          window.location.reload();
+        });
+      }
     });
-  }
-});
 
-function loginUser(user) {
-  localStorage.setItem("loggedInUser", JSON.stringify(user));
-}
-</script>
+    function loginUser(user) {
+      localStorage.setItem("loggedInUser", JSON.stringify(user));
+    }
+  </script>
 </body>
+
 </html>

@@ -1,0 +1,24 @@
+.program-card img {
+  width: 100%;
+  height: 220px;        /* ความสูงรูปเท่ากันทุกใบ */
+  object-fit: cover;    /* ครอปภาพให้เต็มกรอบ */
+  display: block;       /* ป้องกันรูปดัน card */
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.program-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;         /* การ์ดสูงเท่ากัน */
+}
+
+.program-card .card-body {
+  flex: 1;              /* ขยาย body ให้เต็ม */
+  display: flex;
+  flex-direction: column;
+}
+
+.program-card .mt-auto {
+  margin-top: auto;     /* ดันปุ่มลงล่างสุด */
+}
